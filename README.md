@@ -7,3 +7,10 @@ The project tries to create a model based on data provided by the World Health O
 2) Ridge Regression.
 3) Lasso Regression.
 4) ElasticNet Regression.
+
+This project is licensed under the [MIT LICENSE](LICENSE.md). 
+
+## Contributors
+- Adarsh Pal <adarshpal999@gmail.com>
+
+
