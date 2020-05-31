@@ -1,0 +1,413 @@
+[
+    {
+        "id": "110d20e6.05be7f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a041869a.80a828",
+        "type": "ui_form",
+        "z": "110d20e6.05be7f",
+        "name": "",
+        "label": "",
+        "group": "1d1dbd2b.b4e333",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Status (Developed : 1, Developing : 0)",
+                "value": "a",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Adult Mortality",
+                "value": "c",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Infant Deaths",
+                "value": "d",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Alcohol",
+                "value": "e",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Percentage Expenditure",
+                "value": "f",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Hepatitis B",
+                "value": "g",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Measles",
+                "value": "h",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "BMI",
+                "value": "i",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Under-five Deaths",
+                "value": "j",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Polio",
+                "value": "k",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Total Expenditure",
+                "value": "l",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Diptheria",
+                "value": "m",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "HIV/AIDS",
+                "value": "n",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "GDP",
+                "value": "o",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Population",
+                "value": "p",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Thinnes 1-19",
+                "value": "q",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Thinnes 5-9",
+                "value": "r",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Income Composition",
+                "value": "s",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Schooling",
+                "value": "t",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "a": "",
+            "c": "",
+            "d": "",
+            "e": "",
+            "f": "",
+            "g": "",
+            "h": "",
+            "i": "",
+            "j": "",
+            "k": "",
+            "l": "",
+            "m": "",
+            "n": "",
+            "o": "",
+            "p": "",
+            "q": "",
+            "r": "",
+            "s": "",
+            "t": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 84,
+        "y": 268.00000762939453,
+        "wires": [
+            [
+                "65a8a26b.e4c19c"
+            ]
+        ]
+    },
+    {
+        "id": "65a8a26b.e4c19c",
+        "type": "function",
+        "z": "110d20e6.05be7f",
+        "name": "pre token",
+        "func": "
+        //make user given values as global variables\n
+        global.set(\"a\",msg.payload.a);\n
+        global.set(\"c\",msg.payload.c);\n
+        global.set(\"d\",msg.payload.d);\n
+        global.set(\"e\",msg.payload.e);\n
+        global.set(\"f\",msg.payload.f);\n
+        global.set(\"g\",msg.payload.g);\n
+        global.set(\"h\",msg.payload.h);\n
+        global.set(\"i\",msg.payload.i);\n
+        global.set(\"j\",msg.payload.j);\n
+        global.set(\"k\",msg.payload.k);\n
+        global.set(\"l\",msg.payload.l);\n
+        global.set(\"m\",msg.payload.m);\n
+        global.set(\"n\",msg.payload.n);\n
+        global.set(\"o\",msg.payload.o);\n
+        global.set(\"p\",msg.payload.p);\n
+        global.set(\"q\",msg.payload.q);\n
+        global.set(\"r\",msg.payload.r);\n
+        global.set(\"s\",msg.payload.s);\n
+        global.set(\"t\",msg.payload.t);\n\n\n
+        
+        //following are required to receive a token\n
+        var apikey=\"******************************************\";\n
+        msg.headers={\"content-type\":\"application/x-www-form-urlencoded\"};\n
+        msg.payload={\"grant_type\":\"urn:ibm:params:oauth:grant-type:apikey\",\"apikey\":apikey};\n
+        return msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 170,
+        "y": 394.00000619888306,
+        "wires": [
+            [
+                "7b5907cf.fea198"
+            ]
+        ]
+    },
+    {
+        "id": "84ac5483.0578d8",
+        "type": "http request",
+        "z": "110d20e6.05be7f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/246dd8d8-2ca4-47db-92ea-d49fd8e0b104/deployments/f8586636-677a-4e73-acb3-dc109cc71c37/online",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 551.0000076293945,
+        "y": 188.00000286102295,
+        "wires": [
+            [
+                "e1e458e9.f30ae8",
+                "90e95c23.b3fa3"
+            ]
+        ]
+    },
+    {
+        "id": "5e739ca.c197c64",
+        "type": "debug",
+        "z": "110d20e6.05be7f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 878.0000114440918,
+        "y": 494.00000762939453,
+        "wires": []
+    },
+    {
+        "id": "90e95c23.b3fa3",
+        "type": "function",
+        "z": "110d20e6.05be7f",
+        "name": "getFrom Endpoint",
+        "func": "msg.payload = msg.payload.values[0][0];\nmsg.payload = (Math.round(msg.payload * 100) / 100).toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 636.0000076293945,
+        "y": 400.0000057220459,
+        "wires": [
+            [
+                "5e739ca.c197c64",
+                "2fb0dc54.a0b884"
+            ]
+        ]
+    },
+    {
+        "id": "e1e458e9.f30ae8",
+        "type": "debug",
+        "z": "110d20e6.05be7f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 838.0000114440918,
+        "y": 128.00000762939453,
+        "wires": []
+    },
+    {
+        "id": "7d01ec18.9c9ee4",
+        "type": "function",
+        "z": "110d20e6.05be7f",
+        "name": "sendTo Endpoint",
+        "func": "//get token and make headers\n
+        var token=msg.payload.access_token;\n
+        var instance_id=\"************************************\"\n
+        msg.headers={'Content-Type': 'application/json',\"Authorization\":\"Bearer \"+token,\"ML-Instance-ID\":instance_id}\n\n
+        //get variables that are set earlier\n
+        var a = global.get(\"a\");\n
+        var x, y;\n
+        if (a==1){\n
+        x = 1;\n
+        y = 0;\n
+        }\n
+        else {
+        \n    x = 0;\n
+        y = 1;\n
+        }\n
+        var b = global.get(\"b\");\n
+        var c = global.get(\"c\");\n
+        var d = global.get(\"d\");\n
+        var e = global.get(\"e\");\n
+        var f = global.get(\"f\");\n
+        var g = global.get(\"g\");\n
+        var h = global.get(\"h\");\n
+        var i = global.get(\"i\");\n
+        var j = global.get(\"j\");\n
+        var k = global.get(\"k\");\n
+        var l = global.get(\"l\");\n
+        var m = global.get(\"m\");\n
+        var n = global.get(\"n\");\n
+        var o = global.get(\"o\");\n
+        var p = global.get(\"p\");\n
+        var q = global.get(\"q\");\n
+        var r = global.get(\"r\");\n
+        var s = global.get(\"s\");\n
+        var t = global.get(\"t\");\n\n
+        //send the user values to service endpoint\n
+        msg.payload = \n{\"fields\":['Adult Mortality', 'infant deaths', 'Alcohol', 'percentage expenditure',\n
+        'Hepatitis B', 'Measles ', ' BMI ', 'under-five deaths ', 'Polio',\n
+        'Total expenditure', 'Diphtheria ', ' HIV/AIDS', 'GDP', 'Population',\n
+        ' thinness  1-19 years', ' thinness 5-9 years',\n
+        'Income composition of resources', 'Schooling', 'Developed',\n
+        'Developing'],\n
+        \"values\":[[c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,x,y]]};\n\n
+        return msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 397.00000762939453,
+        "y": 318.00000381469727,
+        "wires": [
+            [
+                "84ac5483.0578d8"
+            ]
+        ]
+    },
+    {
+        "id": "7b5907cf.fea198",
+        "type": "http request",
+        "z": "110d20e6.05be7f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "https://iam.cloud.ibm.com/identity/token",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 268.00002670288086,
+        "y": 189.00000190734863,
+        "wires": [
+            [
+                "7d01ec18.9c9ee4"
+            ]
+        ]
+    },
+    {
+        "id": "2fb0dc54.a0b884",
+        "type": "ui_text",
+        "z": "110d20e6.05be7f",
+        "group": "1d1dbd2b.b4e333",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Predicted Life Expectancy : ",
+        "format": "{{msg.payload}} Years",
+        "layout": "row-spread",
+        "x": 869.0000076293945,
+        "y": 267.00000190734863,
+        "wires": []
+    },
+    {
+        "id": "1d1dbd2b.b4e333",
+        "type": "ui_group",
+        "z": "",
+        "name": "Life Expectancy Prediction Model",
+        "tab": "f04c39f8.c8f838",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "f04c39f8.c8f838",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home Page",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": true
+    }
+]
