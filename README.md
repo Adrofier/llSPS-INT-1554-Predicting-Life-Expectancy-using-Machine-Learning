@@ -10,6 +10,9 @@ The project tries to create a model based on data provided by the World Health O
 
 This project is licensed under the [MIT LICENSE](LICENSE.md). 
 
+## Web Application Link
+https://node-red-wtxhd.eu-gb.mybluemix.net/ui
+
 ## Contributors
 - Adarsh Pal <adarshpal999@gmail.com>
 
