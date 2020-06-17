@@ -10,7 +10,8 @@ The project tries to create a model based on data provided by the World Health O
 
 This project is licensed under the [MIT LICENSE](LICENSE.md). 
 
-Video Demo : https://drive.google.com/drive/folders/1JdyxiiDLtbl9UtpG-JgUqGasYpB0bZ3w
+## Video Demo & Feedback
+https://drive.google.com/drive/folders/1JdyxiiDLtbl9UtpG-JgUqGasYpB0bZ3w
 
 ## Contributors
 - Adarsh Pal <adarshpal999@gmail.com>
